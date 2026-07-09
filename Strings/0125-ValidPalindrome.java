@@ -1,3 +1,7 @@
+package Strings;
+import java.util.*;
+
+import Arrays.Solution;
 class Solution {
     public boolean isPalindrome(String s) {
     
@@ -20,5 +24,17 @@ class Solution {
             right--;
         }
         return true;
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the string to check if it is palindrome or not");
+        String s=sc.nextLine();
+        Solution sol=new Solution();
+        if(sol.isPalindrome(s)){
+            System.out.println("The string is a palindrome");
+        }
+        else{
+            System.out.println("The string is not a palindrome");
+        }
     }
 }
