@@ -1,7 +1,6 @@
 package Strings;
 import java.util.*;
 
-import Arrays.Solution;
 class Solution {
     public boolean isPalindrome(String s) {
     
