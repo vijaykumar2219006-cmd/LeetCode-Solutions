@@ -1,0 +1,5 @@
+HashMap
+383. Ransom Note
+205. Isomorphic Strings
+387. First Unique Character in a String
+219. Contains duplicate 2
