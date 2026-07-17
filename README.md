@@ -16,7 +16,7 @@ Welcome to my LeetCode solutions repository! This repository contains my solutio
 ```
 LeetCode-Solutions/
 │
-├── Java/
+├── Arrays/
 │   ├── 0001-Two-Sum.java
 │   ├── 0217-Contains-Duplicate.java
 │   ├── 1480-Running-Sum-of-1D-Array.java
@@ -24,7 +24,8 @@ LeetCode-Solutions/
 │   ├── 1929-Concatenation-of-Array.java
 │   └── ...
 │
-└── README.md
+└── Strings/
+|
 ```
 
 ---
