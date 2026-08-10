@@ -1,6 +1,6 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        int original=x;
+        int Og=x;
         int rev=0;
         int last;
         while(x>0){
@@ -8,7 +8,7 @@ class Solution {
             rev=rev*10+last;
             x=x/10;
         }
-        return original == rev;
+        return Og == rev;
     }
 
 }
