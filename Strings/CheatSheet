@@ -1,0 +1,109 @@
+## Strings — DSA Revision Notes
+
+**Pattern:**
+
+* Traverse the string character by character
+* Use a frequency array / `HashMap` to count characters
+* Use two pointers for palindrome/reversal problems
+* Use `StringBuilder` when modifying strings
+* Use Sliding Window for substring problems
+* Compare characters using `charAt()`
+* Convert between `String`, `char[]`, and `StringBuilder` when needed
+
+**When to use:**
+
+* Finding or counting characters
+* Checking palindrome
+* Reversing a string
+* Finding duplicate characters
+* Comparing two strings
+* Finding substrings
+* Longest/shortest substring problems
+* Anagram problems
+* Problems involving character frequency
+* Problems where the order of characters matters
+
+**Important template:**
+
+Basic traversal:
+
+```java
+for (int i = 0; i < s.length(); i++) {
+    char ch = s.charAt(i);
+    // process ch
+}
+```
+
+Palindrome:
+
+```java
+int left = 0;
+int right = s.length() - 1;
+
+while (left < right) {
+    if (s.charAt(left) != s.charAt(right)) {
+        return false;
+    }
+
+    left++;
+    right--;
+}
+
+return true;
+```
+
+Character frequency:
+
+```java
+int[] freq = new int[26];
+
+for (int i = 0; i < s.length(); i++) {
+    freq[s.charAt(i) - 'a']++;
+}
+```
+
+Using `StringBuilder`:
+
+```java
+StringBuilder sb = new StringBuilder(s);
+
+sb.reverse();
+
+return sb.toString();
+```
+
+**Common mistakes:**
+
+* Using `i <= s.length()` instead of `i < s.length()`
+* Forgetting that string indexes start from `0`
+* Using `==` to compare two `String` objects instead of `.equals()`
+* Confusing `charAt(i)` with `s[i]` — Java strings don't support `s[i]`
+* Forgetting to handle uppercase/lowercase differences
+* Not considering spaces or special characters when the problem requires it
+* Using `String` repeatedly for modifications instead of `StringBuilder`
+* Incorrectly handling an empty string
+* Using a frequency array of size `26` when the input can contain other characters
+
+**Problems solved:**
+
+* First Occurrence in a String
+* Count and Say
+* Valid Palindrome
+* Valid Anagram
+* Reverse String
+* Reverse Words in a String
+* Longest Common Prefix
+* Is Subsequence
+* Longest Substring Without Repeating Characters
+* Find the Difference
+* Roman to Integer
+
+**Time complexity to remember:**
+
+* Access character: `O(1)`
+* Traversal: `O(n)`
+* Reverse: `O(n)`
+* Character frequency: `O(n)`
+* Compare two strings: `O(n)`
+* String concatenation repeatedly: can become `O(n²)`
+* `StringBuilder` modification: generally much more efficient for repeated changes.

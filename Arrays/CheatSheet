@@ -1,0 +1,92 @@
+## Arrays — DSA Revision Notes
+
+**Pattern:**
+
+* Traverse the array using a loop
+* Compare elements
+* Track a variable such as `max`, `min`, `sum`, `count`, or `index`
+* Use two pointers when working from both ends
+* Use prefix sum for repeated range-sum calculations
+* Use hashing when you need fast lookup/frequency counting
+
+**When to use:**
+
+* Finding maximum/minimum element
+* Searching for an element
+* Counting elements/frequencies
+* Finding duplicates
+* Finding pairs/subarrays
+* Rearranging elements
+* Calculating sums
+* Problems involving contiguous elements
+* When the input is a collection of values stored in order
+
+**Important template:**
+
+Basic traversal:
+
+```java
+for (int i = 0; i < arr.length; i++) {
+    // process arr[i]
+}
+```
+
+Find maximum:
+
+```java
+int max = arr[0];
+
+for (int i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+        max = arr[i];
+    }
+}
+```
+
+Two-pointer array:
+
+```java
+int left = 0;
+int right = arr.length - 1;
+
+while (left < right) {
+    // process arr[left] and arr[right]
+
+    left++;
+    right--;
+}
+```
+
+**Common mistakes:**
+
+* Using `i <= arr.length` instead of `i < arr.length`
+* Accessing `arr[i + 1]` when `i` is the last index
+* Accessing `arr[i - 1]` when `i == 0`
+* Forgetting to handle an empty array
+* Incorrectly initializing `max`/`min`
+* Modifying the array when it is not required
+* Confusing **index** with **value**
+* Using nested loops when an `O(n)` solution is possible
+* Forgetting that array indexing starts from `0`
+
+**Problems solved:**
+
+* Two Sum
+* Best Time to Buy and Sell Stock
+* Maximum Subarray
+* Remove Duplicates from Sorted Array
+* Remove Element
+* Plus One
+* Move Zeroes
+* Contains Duplicate
+* Majority Element
+* Rotate Array
+* Find the Maximum/Minimum Element
+
+**Time complexity to remember:**
+
+* Access: `O(1)`
+* Search: `O(n)`
+* Traversal: `O(n)`
+* Insertion/deletion in the middle: `O(n)`
+* Sorting: usually `O(n log n)`
