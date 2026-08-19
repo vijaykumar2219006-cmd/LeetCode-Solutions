@@ -1,0 +1,124 @@
+## Two Pointers — DSA Revision Notes
+
+**Pattern:**
+
+* Use two variables/pointers to traverse an array or string.
+* Most commonly:
+
+  * `left` starts at the beginning
+  * `right` starts at the end
+* Move one or both pointers based on a condition.
+* Common variations:
+
+  * Opposite-direction pointers: `left → ← right`
+  * Same-direction pointers: `slow → fast`
+  * Two arrays/strings: one pointer for each
+
+**When to use:**
+
+* Searching for a pair of elements
+* Checking palindromes
+* Reversing an array/string
+* Working with **sorted arrays**
+* Removing duplicates
+* Moving/rearranging elements
+* Comparing two strings/sequences
+* Finding pairs that satisfy a condition
+* Problems involving the beginning and end of an array/string
+
+**Important template:**
+
+### 1. Opposite-direction pointers
+
+```java
+int left = 0;
+int right = arr.length - 1;
+
+while (left < right) {
+
+    if (/* condition */) {
+        left++;
+    } else {
+        right--;
+    }
+}
+```
+
+For a palindrome:
+
+```java
+int left = 0;
+int right = s.length() - 1;
+
+while (left < right) {
+    if (s.charAt(left) != s.charAt(right)) {
+        return false;
+    }
+
+    left++;
+    right--;
+}
+
+return true;
+```
+
+### 2. Same-direction pointers
+
+```java
+int slow = 0;
+
+for (int fast = 0; fast < arr.length; fast++) {
+
+    if (/* condition */) {
+        arr[slow] = arr[fast];
+        slow++;
+    }
+}
+```
+
+This pattern is commonly used for **removing duplicates** or **moving elements**.
+
+**Common mistakes:**
+
+* Using `left <= right` when the problem requires `left < right`
+* Moving the wrong pointer
+* Moving both pointers when only one should move
+* Forgetting to increment/decrement pointers → infinite loop
+* Assuming every pair problem uses two pointers
+* Forgetting that **Two Sum II** works because the array is sorted
+* Using two pointers when the array isn't sorted and no suitable pointer movement rule exists
+* Confusing `slow/fast` pointers with `left/right` pointers
+* Accessing `arr[left]` or `arr[right]` after the pointers have crossed
+* Not understanding **why** a pointer should move
+
+**Problems solved / to practice:**
+
+* **LeetCode 344 — Reverse String**
+* **LeetCode 125 — Valid Palindrome**
+* **LeetCode 283 — Move Zeroes**
+* **LeetCode 392 — Is Subsequence**
+* **LeetCode 167 — Two Sum II**
+* **LeetCode 11 — Container With Most Water**
+* **LeetCode 15 — 3Sum**
+* **LeetCode 42 — Trapping Rain Water**
+
+**Time complexity to remember:**
+
+* Usually `O(n)` because each pointer moves through the array at most once.
+* Two nested-looking pointer movements can still be `O(n)` if the pointers only move forward.
+* `3Sum` is typically `O(n²)` because of sorting + a two-pointer scan for each element.
+
+### ⭐ Key idea to remember
+
+Don't memorize the template as:
+
+```text
+left++
+right--
+```
+
+Remember:
+
+> **Two pointers work when I can decide which pointer to move based on the current values/condition.**
+
+That's the actual pattern you need to recognize in placement problems.
